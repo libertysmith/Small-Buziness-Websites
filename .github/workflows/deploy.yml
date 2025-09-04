@@ -23,12 +23,24 @@ jobs:
         with:
           node-version: 20
           cache: npm
+
+      # Compute base path for user vs project sites; export VITE_BASE for Vite
+      - name: Set VITE_BASE for GitHub Pages
+        run: |
+          OWNER="${GITHUB_REPOSITORY%/*}"
+          REPO="${GITHUB_REPOSITORY#*/}"
+          if [ "$REPO" = "${OWNER}.github.io" ]; then
+            echo "VITE_BASE=/" >> $GITHUB_ENV
+          else
+            echo "VITE_BASE=/${REPO}/" >> $GITHUB_ENV
+          fi
+
       - run: npm ci
       - run: npm run build
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist  # Vite default output
+          path: ./dist
 
   deploy:
     runs-on: ubuntu-latest

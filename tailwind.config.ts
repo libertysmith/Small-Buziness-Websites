@@ -29,7 +29,8 @@ export default {
 					emerald: '#0E7C66',
 					cloud: '#F8FAFC',
 					slate: '#4B5563',
-					ink: '#111827'
+					ink: '#111827',
+					gold: '#D4A72C' // subtle accent
 				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

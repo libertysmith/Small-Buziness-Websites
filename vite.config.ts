@@ -4,14 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  plugins: [
-    react(),
-    mode === 'development' && componentTagger(),
-  ].filter(Boolean),
-  base: mode === "production" ? "/sbw-bilingual-spark/" : "/", // project site base only in prod
-  server: {
-    host: "::",
-    port: 8080,
-  },
+  plugins: [react()],
+  base: mode === "production" ? (process.env.VITE_BASE ?? "/") : "/",
   resolve: { alias: { "@": path.resolve(__dirname, "./src") } }
 }));

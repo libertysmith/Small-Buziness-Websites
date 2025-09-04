@@ -1,71 +1,35 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import en from "./en.json";
+import ko from "./ko.json";
 
-type Locale = 'en' | 'ko';
-type Dictionary = Record<string, string>;
+type Locale = "en" | "ko";
+type Ctx = { t: (k: string) => string; locale: Locale; setLocale: (l: Locale) => void };
 
-interface I18nContextType {
-  locale: Locale;
-  setLocale: (locale: Locale) => void;
-  t: (key: string) => string;
+const I18nCtx = createContext<Ctx>({ t: (k) => k, locale: "en", setLocale: () => {} });
+
+const catalogs: Record<Locale, Record<string, string>> = { en, ko };
+
+function getDefaultLocale(): Locale {
+  try {
+    if (typeof navigator !== "undefined" && navigator.language?.startsWith("ko")) return "ko";
+  } catch {}
+  return "en";
 }
 
-const I18nContext = createContext<I18nContextType | undefined>(undefined);
-
-const getBrowserLocale = (): Locale => {
-  if (typeof navigator === 'undefined') return 'en';
-  
-  const browserLang = navigator.language.toLowerCase();
-  if (browserLang.startsWith('ko')) return 'ko';
-  return 'en';
-};
-
-const getStoredLocale = (): Locale => {
-  if (typeof window === 'undefined') return getBrowserLocale();
-  
-  const stored = localStorage.getItem('sbw-locale');
-  if (stored === 'en' || stored === 'ko') return stored;
-  return getBrowserLocale();
-};
-
-export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(getStoredLocale);
-  const [dictionary, setDictionary] = useState<Dictionary>({});
-
-  const setLocale = (newLocale: Locale) => {
-    setLocaleState(newLocale);
-    localStorage.setItem('sbw-locale', newLocale);
-    document.documentElement.lang = newLocale;
-  };
-
-  const t = (key: string): string => {
-    return dictionary[key] || key;
-  };
+export function I18nProvider({ children }: { children: React.ReactNode }) {
+  const [locale, setLocale] = useState<Locale>(() => {
+    const saved = typeof localStorage !== "undefined" ? (localStorage.getItem("locale") as Locale | null) : null;
+    return saved === "ko" || saved === "en" ? saved : getDefaultLocale();
+  });
 
   useEffect(() => {
-    const loadDictionary = async () => {
-      try {
-        const dict = await import(`./${locale}.json`);
-        setDictionary(dict.default || dict);
-      } catch (error) {
-        console.error(`Failed to load ${locale} dictionary:`, error);
-      }
-    };
-
-    loadDictionary();
-    document.documentElement.lang = locale;
+    try { localStorage.setItem("locale", locale); } catch {}
   }, [locale]);
 
-  return (
-    <I18nContext.Provider value={{ locale, setLocale, t }}>
-      {children}
-    </I18nContext.Provider>
-  );
+  const dict = useMemo(() => catalogs[locale] ?? catalogs.en, [locale]);
+  const t = (k: string) => (dict[k] ?? catalogs.en[k] ?? k);
+
+  return <I18nCtx.Provider value={{ t, locale, setLocale }}>{children}</I18nCtx.Provider>;
 }
 
-export function useI18n() {
-  const context = useContext(I18nContext);
-  if (context === undefined) {
-    throw new Error('useI18n must be used within an I18nProvider');
-  }
-  return context;
-}
+export const useI18n = () => useContext(I18nCtx);

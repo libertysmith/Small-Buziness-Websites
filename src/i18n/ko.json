@@ -11,7 +11,7 @@
   "hero.cta": "빠른 견적 받기",
 
   "trust.fast": "빠른 구축",
-  "trust.bilingual": "한영 2개국어",
+  "trust.bilingual": "한영 2개 국어",
   "trust.pricing": "고정 요금",
 
   "services.title": "패키지 및 요금",
@@ -20,12 +20,11 @@
   "services.plus": "플러스 — $1,900",
   "services.bullets": "빠른 모바일 우선 구축; 메뉴·사진; 구글 지도 임베드; 한영 페이지; 명확한 범위와 고정 요금",
   "services.note": "일정은 콘텐츠 전달에 따라 달라집니다. 숨겨진 비용은 없습니다.",
-  
   "addons.title": "추가 옵션",
   "addons.items": "로고 리프레시 $150; 사진 보정(20장) $120; 추가 언어 $150; 월 유지보수(2시간) $60",
 
   "portfolio.title": "작업 사례",
-  "portfolio.viewAll": "모든 프로젝트 보기",
+  "portfolio.viewAll": "전체 보기",
   "portfolio.item1.title": "함평면옥 (Hampyong Noodle)",
   "portfolio.item1.blurb": "메뉴와 지도가 명확한 모바일 친화 레스토랑 사이트.",
   "portfolio.item2.title": "Tempo Pilates",

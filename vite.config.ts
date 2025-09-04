@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' && componentTagger(),
   ].filter(Boolean),
-  base: "/sbw-bilingual-spark/", // project site base
+  base: mode === "production" ? "/sbw-bilingual-spark/" : "/", // project site base only in prod
   server: {
     host: "::",
     port: 8080,

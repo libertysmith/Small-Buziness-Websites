@@ -11,7 +11,7 @@
   "hero.cta": "Get a fast quote",
 
   "trust.fast": "Fast build",
-  "trust.bilingual": "Bilingual EN/KR",
+  "trust.bilingual": "Bilingual (EN/KR)",
   "trust.pricing": "Flat pricing",
 
   "services.title": "Packages & Pricing",
@@ -20,12 +20,11 @@
   "services.plus": "Plus — $1,900",
   "services.bullets": "Fast, mobile-first build; Menu & photos; Google Map embeds; Bilingual pages; Clear scope & flat pricing",
   "services.note": "Timelines depend on content delivery. No hidden fees.",
-  
   "addons.title": "Add-ons",
   "addons.items": "Logo refresh $150; Photo editing (20) $120; Extra language $150; Monthly updates (2 hrs) $60",
 
   "portfolio.title": "Recent Work",
-  "portfolio.viewAll": "View all projects",
+  "portfolio.viewAll": "View all work",
   "portfolio.item1.title": "Hampyong Noodle",
   "portfolio.item1.blurb": "Mobile-friendly restaurant site with clear menu and map.",
   "portfolio.item2.title": "Tempo Pilates",

@@ -24,7 +24,7 @@ jobs:
           node-version: 20
           cache: npm
 
-      # Compute base path for user vs project sites; export VITE_BASE for Vite
+      # Compute base for user vs project sites; export VITE_BASE for Vite
       - name: Set VITE_BASE for GitHub Pages
         run: |
           OWNER="${GITHUB_REPOSITORY%/*}"
@@ -34,6 +34,7 @@ jobs:
           else
             echo "VITE_BASE=/${REPO}/" >> $GITHUB_ENV
           fi
+          echo "Using VITE_BASE=$VITE_BASE"
 
       - run: npm ci
       - run: npm run build

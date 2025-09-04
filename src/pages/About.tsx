@@ -43,14 +43,12 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             {/* Photo */}
             <div className="order-2 lg:order-1">
-              <div className="bg-brand-cloud rounded-lg aspect-square flex items-center justify-center border border-brand-royal/20">
-                <div className="text-center text-brand-slate">
-                  <div className="text-lg mb-2">Photo placeholder</div>
-                  <div className="text-sm">public/assets/libby.jpg</div>
-                  <div className="text-sm text-brand-slate/60 mt-2">
-                    Alt: Professional photo of Libby Smith, web developer
-                  </div>
-                </div>
+              <div className="rounded-lg overflow-hidden">
+                <img 
+                  src="/assets/libby.jpg" 
+                  alt="Professional photo of Libby Smith, web developer specializing in bilingual websites for DFW small businesses"
+                  className="w-full h-auto aspect-square object-cover"
+                />
               </div>
             </div>
 

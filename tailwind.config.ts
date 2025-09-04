@@ -18,7 +18,19 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				inter: ['Inter', 'sans-serif'],
+				noto: ['Noto Sans KR', 'sans-serif'],
+			},
 			colors: {
+				brand: {
+					charcoal: '#1F2937',
+					royal: '#2B6CB0', 
+					emerald: '#0E7C66',
+					cloud: '#F8FAFC',
+					slate: '#4B5563',
+					ink: '#111827'
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

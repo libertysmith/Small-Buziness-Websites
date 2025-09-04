@@ -1,0 +1,45 @@
+{
+  "nav.home": "홈",
+  "nav.services": "서비스",
+  "nav.portfolio": "포트폴리오",
+  "nav.about": "소개",
+  "nav.contact": "문의",
+  "nav.language": "English",
+
+  "hero.title": "DFW 레스토랑·카페·상점을 위한 2개 국어 웹사이트",
+  "hero.subtitle": "모바일 최적화, 한영 지원, 빠른 구축 — 지금 바로 전화·주문·방문을 이끌어냅니다.",
+  "hero.cta": "빠른 견적 받기",
+
+  "trust.fast": "빠른 구축",
+  "trust.bilingual": "한영 2개국어",
+  "trust.pricing": "고정 요금",
+
+  "services.title": "패키지 및 요금",
+  "services.starter": "스타터 — $999",
+  "services.standard": "스탠다드 — $1,400",
+  "services.plus": "플러스 — $1,900",
+  "services.bullets": "빠른 모바일 우선 구축; 메뉴·사진; 구글 지도 임베드; 한영 페이지; 명확한 범위와 고정 요금",
+  "services.note": "일정은 콘텐츠 전달에 따라 달라집니다. 숨겨진 비용은 없습니다.",
+  
+  "addons.title": "추가 옵션",
+  "addons.items": "로고 리프레시 $150; 사진 보정(20장) $120; 추가 언어 $150; 월 유지보수(2시간) $60",
+
+  "portfolio.title": "작업 사례",
+  "portfolio.viewAll": "모든 프로젝트 보기",
+  "portfolio.item1.title": "함평면옥 (Hampyong Noodle)",
+  "portfolio.item1.blurb": "메뉴와 지도가 명확한 모바일 친화 레스토랑 사이트.",
+  "portfolio.item2.title": "Tempo Pilates",
+  "portfolio.item2.blurb": "명확한 행동 유도와 빠른 속도의 마케팅 사이트.",
+
+  "about.title": "소개",
+  "about.body": "안녕하세요, 리비입니다. DFW 지역의 레스토랑·카페·소상공인을 위해 빠르고 깔끔한 웹사이트를 제작합니다. 한영 2개 국어 사이트 경험이 있으며 React, Vite, Tailwind로 구축합니다. 명확한 범위, 고정 요금, 친절한 지원을 약속드립니다.",
+  "about.cta": "빠른 견적 받기",
+
+  "contact.title": "빠른 견적 및 상담 의뢰",
+  "contact.note": "아래 양식으로 정보를 보내주세요. 폼이 보이지 않으면 새 탭에서 열어주세요.",
+  "contact.openForm": "새 탭에서 폼 열기",
+
+  "footer.email": "이메일",
+  "footer.phone": "전화",
+  "footer.copyright": "© Small Buziness Websites"
+}

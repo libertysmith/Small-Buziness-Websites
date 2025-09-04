@@ -2,56 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Small Buziness Websites Design System
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
+    /* Brand Colors */
+    --brand-charcoal: 217 19% 27%;     /* #1F2937 */
+    --brand-royal: 213 39% 41%;        /* #2B6CB0 */
+    --brand-emerald: 168 89% 28%;      /* #0E7C66 */
+    --brand-cloud: 210 40% 98%;        /* #F8FAFC */
+    --brand-slate: 218 11% 40%;        /* #4B5563 */
+    --brand-ink: 220 39% 11%;          /* #111827 */
+
+    /* System Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: var(--brand-ink);
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: var(--brand-ink);
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    --popover-foreground: var(--brand-ink);
+    
+    --primary: var(--brand-royal);
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: var(--brand-cloud);
+    --secondary-foreground: var(--brand-ink);
+    
+    --muted: var(--brand-cloud);
+    --muted-foreground: var(--brand-slate);
+    
+    --accent: var(--brand-royal);
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: var(--brand-royal);
+    
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -100,6 +102,33 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  /* Korean text styling */
+  :lang(ko) {
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  /* Accessibility - Focus visible */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+  
+  /* Button accessibility */
+  button, .btn {
+    min-height: 44px;
+  }
+  
+  /* Link accessibility */
+  a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  
+  a:hover {
+    text-decoration-thickness: 2px;
   }
 }

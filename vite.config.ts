@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' && componentTagger(),
   ].filter(Boolean),
-  base: "/Small-Buziness-Websites/", // project site base
+  base: "/sbw-bilingual-spark/", // project site base
   server: {
     host: "::",
     port: 8080,

@@ -6,6 +6,13 @@
   "nav.contact": "문의",
   "nav.language": "English",
 
+  "hero.aria": "홈페이지 히어로",
+  "hero.alt": "지역 레스토랑/카페와 연결되는 고객",
+  "hero.tagline": "Lumi Web 서비스는 고객이 귀하의 비즈니스를 찾고, 정보를 얻고, 주문하며, 관계를 쌓도록 돕습니다. 고객의 온라인 경험을 개인화하세요.",
+  "hero.support": "DFW 지역의 레스토랑·카페·상점을 위한 서비스. 모바일 우선, 빠른 구축 - 오늘 바로 전화·주문·방문을 이끌어냅니다.",
+  "hero.bilingualPill": "한영 지원 제공",
+  "hero.cta.primary": "빠른 견적 받기",
+  "hero.cta.secondary": "작업 사례 보기",
   "hero.title": "DFW 레스토랑·카페·상점을 위한 2개 국어 웹사이트",
   "hero.subtitle": "모바일 최적화, 한영 지원, 빠른 구축 - 지금 바로 전화·주문·방문을 이끌어냅니다.",
   "hero.cta": "빠른 견적 받기",

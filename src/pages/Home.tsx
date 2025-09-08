@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Zap, Globe, DollarSign, ExternalLink } from 'lucide-react';
+import Hero from '@/components/Hero';
 
 export default function Home() {
   const { t } = useI18n();
@@ -16,25 +17,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-background py-20 lg:py-32">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl lg:text-6xl font-bold text-brand-ink mb-6 leading-tight">
-              {t('hero.title')}
-            </h1>
-            <p className="text-xl lg:text-2xl text-brand-slate mb-8 leading-relaxed">
-              {t('hero.subtitle')}
-            </p>
-            <Button 
-              asChild 
-              className="bg-brand-royal hover:bg-brand-royal/90 text-white px-8 py-6 text-lg"
-            >
-              <Link to="/contact">{t('hero.cta')}</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* Trust Indicators */}
       <section className="bg-brand-cloud py-16">

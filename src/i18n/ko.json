@@ -7,7 +7,7 @@
   "nav.language": "English",
 
   "hero.title": "DFW 레스토랑·카페·상점을 위한 2개 국어 웹사이트",
-  "hero.subtitle": "모바일 최적화, 한영 지원, 빠른 구축 — 지금 바로 전화·주문·방문을 이끌어냅니다.",
+  "hero.subtitle": "모바일 최적화, 한영 지원, 빠른 구축 - 지금 바로 전화·주문·방문을 이끌어냅니다.",
   "hero.cta": "빠른 견적 받기",
 
   "trust.fast": "빠른 구축",
@@ -15,9 +15,9 @@
   "trust.pricing": "고정 요금",
 
   "services.title": "패키지 및 요금",
-  "services.starter": "스타터 — $999",
-  "services.standard": "스탠다드 — $1,400",
-  "services.plus": "플러스 — $1,900",
+  "services.starter": "스타터 - $999",
+  "services.standard": "스탠다드 - $1,400",
+  "services.plus": "플러스 - $1,900",
   "services.bullets": "빠른 모바일 우선 구축; 메뉴·사진; 구글 지도 임베드; 한영 페이지; 명확한 범위와 고정 요금",
   "services.note": "일정은 콘텐츠 전달에 따라 달라집니다. 숨겨진 비용은 없습니다.",
   "addons.title": "추가 옵션",
@@ -39,6 +39,5 @@
   "contact.openForm": "새 탭에서 폼 열기",
 
   "footer.email": "이메일",
-  "footer.phone": "전화",
-  "footer.copyright": "© Small Buziness Websites"
+  "footer.phone": "전화"
 }

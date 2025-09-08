@@ -7,7 +7,7 @@
   "nav.language": "한국어",
 
   "hero.title": "Bilingual websites for DFW restaurants, cafés, and shops.",
-  "hero.subtitle": "Mobile-first, Korean/English, and ready fast—so customers can call, order, or visit today.",
+  "hero.subtitle": "Mobile-first, Korean/English, and ready fast - so customers can call, order, or visit today.",
   "hero.cta": "Get a fast quote",
 
   "trust.fast": "Fast build",
@@ -15,9 +15,9 @@
   "trust.pricing": "Flat pricing",
 
   "services.title": "Packages & Pricing",
-  "services.starter": "Starter — $999",
-  "services.standard": "Standard — $1,400",
-  "services.plus": "Plus — $1,900",
+  "services.starter": "Starter - $999",
+  "services.standard": "Standard - $1,400",
+  "services.plus": "Plus - $1,900",
   "services.bullets": "Fast, mobile-first build; Menu & photos; Google Map embeds; Bilingual pages; Clear scope & flat pricing",
   "services.note": "Timelines depend on content delivery. No hidden fees.",
   "addons.title": "Add-ons",
@@ -31,7 +31,7 @@
   "portfolio.item2.blurb": "Clean, fast marketing site with clear calls to action.",
 
   "about.title": "About Me",
-  "about.body": "Hi, I'm Libby. I build clean, fast websites for small businesses in DFW—especially restaurants, cafés, and local shops. I've shipped bilingual sites (Korean/English) and work with React, Vite, and Tailwind. My approach is simple: clear scope, flat pricing, and friendly support.",
+  "about.body": "Hi, I'm Libby. I build clean, fast websites for small businesses in DFW - especially restaurants, cafés, and local shops. I've shipped bilingual sites (Korean/English) and work with React, Vite, and Tailwind. My approach is simple: clear scope, flat pricing, and friendly support.",
   "about.cta": "Get a fast quote",
 
   "contact.title": "Fast Quote & Intake",
@@ -39,6 +39,5 @@
   "contact.openForm": "Open the form in a new tab",
 
   "footer.email": "Email",
-  "footer.phone": "Call",
-  "footer.copyright": "© Small Buziness Websites"
+  "footer.phone": "Call"
 }

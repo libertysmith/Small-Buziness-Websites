@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { LogoSBW } from './LogoSBW';
+import LogoLumi from '@/components/LogoLumi';
 import { useI18n } from '@/i18n/useI18n';
 import { Button } from '@/components/ui/button';
 
@@ -24,7 +24,7 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           <Link to="/" className="flex-shrink-0">
-            <LogoSBW variant="reverse" />
+            <LogoLumi variant="light" size={28} />
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">

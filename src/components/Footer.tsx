@@ -32,7 +32,7 @@ export function Footer() {
           
           <div className="pt-8 border-t border-white/20 text-center">
             <p className="text-white/70">
-              {t('footer.copyright')}
+              © Lumi Web
             </p>
           </div>
         </div>

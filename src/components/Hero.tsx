@@ -6,8 +6,11 @@ export default function Hero() {
   const { t } = useI18n();
 
   return (
-    <section aria-label={t("hero.aria")} className="relative w-full">
-      <div className="relative w-full" style={{height: "72vh"}}>
+    <section aria-label={t("hero.aria")} className="relative w-full min-h-[48vh] sm:min-h-[56vh] lg:min-h-[72vh]">
+      <div className="relative w-full h-[48vh] sm:h-[56vh] lg:h-[72vh]">
+        {/* Loading fallback background */}
+        <div className="absolute inset-0 bg-gray-900" />
+        
         <picture>
           <source
             type="image/webp"
@@ -23,34 +26,37 @@ export default function Hero() {
           <img
             src="/hero/hero-4858x3644.jpg"
             alt={t("hero.alt")}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300"
             style={{objectPosition: "50% 35%"}}
             fetchPriority="high"
+            loading="eager"
+            onError={(e) => {
+              console.warn("Hero image failed to load:", e.currentTarget.src);
+            }}
           />
         </picture>
 
         {/* Contrast overlay */}
-        <div className="absolute inset-0 pointer-events-none"
-             style={{background: "linear-gradient(to bottom, rgba(17,24,39,.35) 0%, rgba(17,24,39,.75) 100%)"}} />
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-gray-900/35 to-gray-900/75" />
 
-        {/* Text overlay */}
-        <div className="absolute inset-0 flex items-end">
-          <div className="mx-auto w-full max-w-6xl px-4 pb-12">
-            <div className="max-w-2xl text-white">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+        {/* Text overlay - centered with safe padding */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="mx-auto w-full max-w-6xl px-4 py-20 sm:py-24 lg:py-32">
+            <div className="max-w-3xl text-white text-center sm:text-left">
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-tight">
                 {t("hero.tagline")}
               </h1>
-              <p className="mt-3 text-base sm:text-lg leading-relaxed opacity-95">
+              <p className="mt-4 text-sm sm:text-lg lg:text-xl leading-relaxed opacity-95 max-w-2xl">
                 {t("hero.support")}
               </p>
 
               {/* Tertiary bilingual pill */}
-              <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-sm">
+              <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1.5 text-xs sm:text-sm">
                 <span aria-hidden="true">🌐</span>
                 <span>{t("hero.bilingualPill")}</span>
               </div>
 
-              <div className="mt-6 flex flex-wrap items-center gap-3">
+              <div className="mt-6 flex flex-col sm:flex-row items-center gap-3 justify-center sm:justify-start">
                 <ButtonPrimary as="a" href={`${import.meta.env.BASE_URL}contact`}>
                   {t("hero.cta.primary")}
                 </ButtonPrimary>
@@ -62,15 +68,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 1024px){
-          section[aria-label="${t("hero.aria")}"] > div { height: 56vh; }
-        }
-        @media (max-width: 640px){
-          section[aria-label="${t("hero.aria")}"] > div { height: 48vh; }
-        }
-      `}</style>
     </section>
   );
 }

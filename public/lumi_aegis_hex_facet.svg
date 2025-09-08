@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lumi Web — Aegis Hex (Facet)">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2B6CB0" />
+      <stop offset="100%" stop-color="#D4A72C" />
+    </linearGradient>
+  </defs>
+  <!-- Outer hex -->
+  <path d="M32 4 L56 16 L56 48 L32 60 L8 48 L8 16 Z"
+        fill="#1F2937" stroke="url(#g2)" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Inner hex inset for facet effect -->
+  <path d="M32 10 L50 19 L50 45 L32 54 L14 45 L14 19 Z"
+        fill="none" stroke="#2B6CB0" stroke-opacity="0.35" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Bevel diagonals (subtle) -->
+  <path d="M14 19 L50 45" stroke="#D4A72C" stroke-opacity="0.25" stroke-width="2" />
+  <path d="M50 19 L14 45" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="2" />
+  <!-- Inner L -->
+  <path d="M22 18 V44 H42" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

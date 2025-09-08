@@ -37,6 +37,7 @@ jobs:
           echo "Using VITE_BASE=$VITE_BASE"
 
       - run: npm ci
+      - run: node tools/gen-hero.mjs
       - run: npm run build
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

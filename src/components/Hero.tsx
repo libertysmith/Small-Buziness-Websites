@@ -11,9 +11,8 @@ export default function Hero() {
       aria-label={t("hero.aria")}
       className="relative w-full isolate bg-[color:var(--brand-charcoal)]"
     >
-      <div className="relative w-full min-h-[72svh] md:min-h-[64svh] sm:min-h-[56svh]">
+      <div className="relative w-full min-h-[70svh] md:min-h-[64svh] sm:min-h-[60svh]">
         <picture>
-          {/* WebP sources built from the CI step; fallback to JPG if missing */}
           <source
             type="image/webp"
             srcSet={[
@@ -40,52 +39,75 @@ export default function Hero() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(17,24,39,.35) 0%, rgba(17,24,39,.75) 100%)",
+              "linear-gradient(to bottom, rgba(17,24,39,.35) 0%, rgba(17,24,39,.78) 100%)",
           }}
         />
 
-        {/* Text overlay: center vertically, pad from top so it never hides under navbar */}
-        <div className="absolute inset-0 z-10 flex items-center">
-          <div className="mx-auto w-full max-w-6xl px-4 pt-20 md:pt-24 pb-8">
-            <div className="max-w-3xl text-white">
-              <h1
-                className="font-bold tracking-tight text-balance"
-                style={{
-                  fontSize: "clamp(1.75rem, 4.2vw, 3.25rem)", // ~28px–52px+
-                  lineHeight: 1.15,
-                }}
-              >
-                {t("hero.tagline")}
-              </h1>
+        {/* Text overlay wrapper */}
+        <div className="absolute inset-0 z-10">
+          <div className="mx-auto h-full w-full max-w-6xl px-4">
+            {/* Use a full-height flex to control vertical alignment */}
+            <div className="flex h-full items-end md:items-center">
+              {/* Padding clears the navbar; extra bottom pad keeps CTAs off the border */}
+              <div className="max-w-3xl text-white pt-24 md:pt-28 pb-24 sm:pb-20 md:pb-16">
+                <h1
+                  className="font-bold tracking-tight text-balance drop-shadow-[0_1px_1px_rgba(0,0,0,.4)]"
+                  style={{
+                    fontSize: "clamp(1.5rem, 3.6vw, 3rem)",   // ~24–48px+
+                    lineHeight: 1.15,
+                  }}
+                >
+                  {t("hero.tagline")}
+                </h1>
 
-              <p
-                className="mt-3 opacity-95"
-                style={{
-                  fontSize: "clamp(1rem, 1.6vw, 1.25rem)", // ~16px–20px
-                  lineHeight: 1.5,
-                }}
-              >
-                {t("hero.support")}
-              </p>
+                <p
+                  className="mt-3 opacity-95"
+                  style={{
+                    fontSize: "clamp(0.95rem, 1.3vw, 1.2rem)", // ~15–19px
+                    lineHeight: 1.55,
+                  }}
+                >
+                  {t("hero.support")}
+                </p>
 
-              {/* Tertiary bilingual pill */}
-              <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-sm">
-                <span aria-hidden="true">🌐</span>
-                <span>{t("hero.bilingualPill")}</span>
-              </div>
+                {/* Tertiary bilingual pill (small on mobile) */}
+                <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs sm:text-sm">
+                  <span aria-hidden="true">🌐</span>
+                  <span>{t("hero.bilingualPill")}</span>
+                </div>
 
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <ButtonPrimary as="a" href={`${base}contact`}>
-                  {t("hero.cta.primary")}
-                </ButtonPrimary>
-                <ButtonSecondary as="a" href={`${base}portfolio`}>
-                  {t("hero.cta.secondary")}
-                </ButtonSecondary>
+                {/* CTA row: force full width on tiny screens so they don't wrap to the border */}
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                  <ButtonPrimary
+                    as="a"
+                    href={`${base}contact`}
+                    className="w-full xs:w-auto sm:w-auto"
+                  >
+                    {t("hero.cta.primary")}
+                  </ButtonPrimary>
+                  <ButtonSecondary
+                    as="a"
+                    href={`${base}portfolio`}
+                    className="w-full xs:w-auto sm:w-auto"
+                  >
+                    {t("hero.cta.secondary")}
+                  </ButtonSecondary>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Extra safety: adjust min-height and paddings at narrow widths */}
+      <style>{`
+        @media (max-width: 1024px){
+          section[aria-label="${t("hero.aria")}"] .min-h-fix { min-height: 64svh; }
+        }
+        @media (max-width: 640px){
+          section[aria-label="${t("hero.aria")}"] .min-h-fix { min-height: 60svh; }
+        }
+      `}</style>
     </section>
   );
 }

@@ -48,16 +48,22 @@ function Card({
   blurb: string;
 }) {
   return (
-    <div className="group relative rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+    <div className="group relative rounded-2xl border bg-white p-6 shadow-md hover:shadow-lg transition-shadow"
+         style={{ borderColor: "rgba(15, 23, 42, 0.12)" }}>
       {/* Gradient accent bar */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-1 rounded-t-2xl"
-           style={{background: "linear-gradient(90deg, #2B6CB0 0%, #D4A72C 100%)"}} />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-1.5 rounded-t-2xl"
+           style={{background: "linear-gradient(90deg, hsl(var(--brand-royal)) 0%, #D4A72C 100%)"}} />
       <div className="flex items-start gap-4">
-        <div className="mt-1 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 ring-1 ring-slate-200 text-slate-700">
+        <div className="mt-1 flex h-12 w-12 items-center justify-center rounded-xl ring-1"
+             style={{
+               color: "hsl(var(--brand-royal))",
+               backgroundColor: "hsl(var(--brand-royal) / 0.08)",
+               borderColor: "hsl(var(--brand-royal) / 0.22)"
+             }}>
           {icon}
         </div>
         <div>
-          <h3 className="text-lg font-semibold tracking-tight text-slate-900">{title}</h3>
+          <h3 className="text-lg font-semibold tracking-tight text-slate-950">{title}</h3>
           <p className="mt-1 text-slate-700 leading-relaxed">
             {blurb}
           </p>

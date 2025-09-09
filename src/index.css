@@ -16,8 +16,12 @@ All colors MUST be HSL.
     --brand-slate: 218 11% 40%;        /* #4B5563 */
     --brand-ink: 220 39% 11%;          /* #111827 */
 
+    /* Surface tokens */
+    --surface: 0 0% 100%;              /* white card/content surface */
+    --surface-muted: 210 40% 96%;      /* darker light-gray background */
+
     /* System Colors */
-    --background: 0 0% 100%;
+    --background: var(--surface-muted);
     --foreground: var(--brand-ink);
     
     --card: 0 0% 100%;
@@ -101,8 +105,12 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html, body, #root {
+    background-color: hsl(var(--surface-muted));
+  }
+
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply text-foreground font-inter;
     font-size: 17px;
     line-height: 1.6;
   }

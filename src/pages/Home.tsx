@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';
 import Hero from '@/components/Hero';
 import ValueGrid from '@/components/home/ValueGrid';
+import PromoImageRight from '@/components/home/PromoImageRight';
 
 export default function Home() {
   const { t } = useI18n();
@@ -17,6 +18,8 @@ export default function Home() {
       <section className="bg-brand-cloud py-16">
         <ValueGrid />
       </section>
+
+      <PromoImageRight />
 
       {/* Portfolio Preview */}
       <section className="py-20">

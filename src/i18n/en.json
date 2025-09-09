@@ -21,6 +21,16 @@
   "trust.bilingual": "Bilingual (EN/KR)",
   "trust.pricing": "Flat pricing",
 
+  "benefits.aria": "Key benefits",
+  "benefits.fast.title": "Fast build",
+  "benefits.fast.blurb": "Launch quickly with a clear plan and simple steps, from intake to go live.",
+  "benefits.bilingual.title": "Bilingual (EN/KR)",
+  "benefits.bilingual.blurb": "Serve customers in English and Korean with side-by-side pages and an easy language toggle.",
+  "benefits.flat.title": "Flat pricing",
+  "benefits.flat.blurb": "Know your cost up front with flat packages and no surprise add-ons.",
+  "benefits.custom.title": "Custom web design",
+  "benefits.custom.blurb": "Create your own custom-branded site that's unique to your business.",
+
   "services.title": "Packages & Pricing",
   "services.starter": "Starter - $999",
   "services.standard": "Standard - $1,499",

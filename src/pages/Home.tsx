@@ -2,39 +2,20 @@ import { Link } from 'react-router-dom';
 import { useI18n } from '@/i18n/useI18n';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Zap, Globe, DollarSign, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import Hero from '@/components/Hero';
+import ValueGrid from '@/components/home/ValueGrid';
 
 export default function Home() {
   const { t } = useI18n();
-
-  const trustItems = [
-    { icon: Zap, key: 'trust.fast' },
-    { icon: Globe, key: 'trust.bilingual' },
-    { icon: DollarSign, key: 'trust.pricing' },
-  ];
 
   return (
     <div className="min-h-screen">
       <Hero />
 
-      {/* Trust Indicators */}
+      {/* Value Props */}
       <section className="bg-brand-cloud py-16">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-6">
-            {trustItems.map(({ icon: Icon, key }) => (
-              <Badge 
-                key={key} 
-                variant="secondary" 
-                className="flex items-center gap-2 px-6 py-3 text-base bg-white border border-brand-royal/20"
-              >
-                <Icon size={18} className="text-brand-royal" />
-                <span className="text-brand-ink">{t(key)}</span>
-              </Badge>
-            ))}
-          </div>
-        </div>
+        <ValueGrid />
       </section>
 
       {/* Portfolio Preview */}

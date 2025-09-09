@@ -40,6 +40,7 @@
   "about.title": "About Me",
   "about.body": "Hi, I'm Libby. I build clean, fast websites for small businesses in DFW - especially restaurants, cafés, and local shops. I've shipped bilingual sites (Korean/English) and work with React, Vite, and Tailwind. My approach is simple: clear scope, flat pricing, and friendly support.",
   "about.cta": "Get a fast quote",
+  "about.headshotAlt": "Portrait of Libby Smith, web developer in DFW",
 
   "contact.title": "Fast Quote & Intake",
   "contact.note": "Send your details below. If the form doesn't load, open it in a new tab.",

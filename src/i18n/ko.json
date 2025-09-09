@@ -40,6 +40,7 @@
   "about.title": "소개",
   "about.body": "안녕하세요, 리비입니다. DFW 지역의 레스토랑·카페·소상공인을 위해 빠르고 깔끔한 웹사이트를 제작합니다. 한영 2개 국어 사이트 경험이 있으며 React, Vite, Tailwind로 구축합니다. 명확한 범위, 고정 요금, 친절한 지원을 약속드립니다.",
   "about.cta": "빠른 견적 받기",
+  "about.headshotAlt": "웹 개발자 Libby Smith의 프로필 사진",
 
   "contact.title": "빠른 견적 및 상담 의뢰",
   "contact.note": "아래 양식으로 정보를 보내주세요. 폼이 보이지 않으면 새 탭에서 열어주세요.",

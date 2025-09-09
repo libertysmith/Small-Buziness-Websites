@@ -26,7 +26,9 @@ jobs:
 
       - run: npm ci
       - name: Set Vite base path from repo slug
-        run: echo "VITE_BASE=/${{ github.event.repository.name }}/" >> $GITHUB_ENV
+        run: |
+          echo "VITE_BASE=/${{ github.event.repository.name }}/" >> $GITHUB_ENV
+          echo "Building with VITE_BASE=/${{ github.event.repository.name }}/"
       - run: node tools/gen-hero.mjs
       - run: npm run build
       - run: node tools/spa-fallback.mjs

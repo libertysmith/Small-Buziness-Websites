@@ -7,7 +7,7 @@ export default function PromoImageRight() {
 
   return (
     <section aria-label={t("promo2.aria")} className="relative w-full isolate">
-      <div className="relative w-full min-h-[72svh] md:min-h-[65svh] sm:min-h-[53svh]">
+      <div className="relative w-full min-h-[86svh] md:min-h-[78svh] sm:min-h-[64svh]">
         {/* Background image */}
         <img
           src={`${base}hero/hero2.jpg`}

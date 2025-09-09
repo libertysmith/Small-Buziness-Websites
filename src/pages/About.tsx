@@ -10,8 +10,7 @@ export default function About() {
       <h1 className="text-3xl font-bold tracking-tight">{t("about.title")}</h1>
 
       {/* Headshot + body layout */}
-      <section className="mt-6 grid gap-8 md:grid-cols-[minmax(220px,420px),1fr] items-start">
-        {/* Headshot */}
+      <section className="mt-6 grid gap-10 md:grid-cols-[minmax(240px,440px),1fr] items-start">
         <figure className="justify-self-center md:justify-self-start">
           <img
             src={`${base}about/headshot.jpg`}
@@ -21,15 +20,24 @@ export default function About() {
             loading="lazy"
             decoding="async"
             className="h-auto w-full rounded-2xl shadow ring-1 ring-black/5 object-cover"
-            style={{ width: "clamp(220px, 40vw, 420px)" }}
+            style={{ width: "clamp(220px, 38vw, 420px)" }}
           />
           <figcaption className="sr-only">{t("about.headshotAlt")}</figcaption>
         </figure>
 
-        {/* Existing about copy */}
-        <div className="prose prose-slate max-w-none">
+        <div
+          className="
+            text-slate-800
+            [&_p]:my-4 [&_p]:leading-[1.75]
+          "
+          style={{
+            fontSize: "clamp(1rem, 0.85vw + 0.8rem, 1.156rem)",
+            maxWidth: "68ch"
+          }}
+        >
           <p>{t("about.body")}</p>
-          <div className="mt-4">
+
+          <div className="mt-5">
             <a
               href={`${base}contact`}
               className="inline-flex items-center rounded-md border px-4 py-2 text-sm hover:bg-neutral-50"

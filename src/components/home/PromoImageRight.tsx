@@ -12,8 +12,7 @@ export default function PromoImageRight() {
         <img
           src={`${base}hero/hero2.jpg`}
           alt={t("promo2.alt")}
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "50% 50%" }}
+          className="absolute inset-0 h-full w-full object-cover promo2-img"
           loading="lazy"
           decoding="async"
         />
@@ -45,6 +44,17 @@ export default function PromoImageRight() {
           </div>
         </div>
       </div>
+
+      {/* Responsive focal shift: push view lower on smaller screens */}
+      <style>{`
+        section[aria-label="${t("promo2.aria")}"] .promo2-img { object-position: 50% 82%; }
+        @media (max-width: 1024px){
+          section[aria-label="${t("promo2.aria")}"] .promo2-img { object-position: 50% 88%; }
+        }
+        @media (max-width: 640px){
+          section[aria-label="${t("promo2.aria")}"] .promo2-img { object-position: 50% 92%; }
+        }
+      `}</style>
     </section>
   );
 }

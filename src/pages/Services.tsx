@@ -18,12 +18,12 @@ export default function Services() {
         'Bilingual EN/KR content',
         'Contact form integration',
         'Google Maps embed',
-        'Basic SEO setup'
+        'Basic setup'
       ]
     },
     {
       name: t('services.standard'),
-      price: '$1,400', 
+      price: '$1,499', 
       features: [
         'Up to 5 pages',
         'Mobile-first responsive design',
@@ -31,13 +31,13 @@ export default function Services() {
         'Menu/service showcase',
         'Photo gallery (up to 20 photos)',
         'Contact forms & Google Maps',
-        'Advanced SEO & social sharing',
+        'Advanced social sharing',
         'Basic analytics setup'
       ]
     },
     {
       name: t('services.plus'),
-      price: '$1,900',
+      price: '$1,999',
       features: [
         'Up to 8 pages',
         'Mobile-first responsive design', 
@@ -45,7 +45,7 @@ export default function Services() {
         'Advanced menu/catalog system',
         'Photo gallery (up to 40 photos)',
         'Multiple contact forms',
-        'Advanced SEO & performance',
+        'Advanced performance optimization',
         'Analytics & conversion tracking',
         '30 days post-launch support'
       ]

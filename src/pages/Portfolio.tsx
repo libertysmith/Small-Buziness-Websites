@@ -1,28 +1,25 @@
+import React from 'react';
 import { useI18n } from '@/i18n/useI18n';
-import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ExternalLink } from 'lucide-react';
 
 export default function Portfolio() {
   const { t } = useI18n();
+  const base = import.meta.env.BASE_URL || "/";
 
-  const projects = [
-    {
-      title: t('portfolio.item1.title'),
-      description: t('portfolio.item1.blurb'),
-      url: 'https://hampyongnoodle.twupro.com/',
-      domain: 'hampyongnoodle.twupro.com',
-      tags: ['Restaurant', 'Korean', 'Bilingual', 'Mobile-First']
-    },
-    {
-      title: t('portfolio.item2.title'), 
-      description: t('portfolio.item2.blurb'),
-      url: 'https://www.tempo-pilates.com/',
-      domain: 'tempo-pilates.com',
-      tags: ['Fitness', 'Marketing', 'Clean Design', 'Fast Loading']
-    }
-  ];
+  // Encode each filename (handles spaces)
+  const shots = [
+    "Screenshot Hampyong 2025-09-13.jpg",
+    "Screenshot Tempo 2025-09-13.jpg"
+  ].map(name => `${base}${encodeURI(name)}`);
+
+  const [openSrc, setOpenSrc] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpenSrc(null); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
     <div className="min-h-screen py-20">
@@ -36,56 +33,67 @@ export default function Portfolio() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          {projects.map((project, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-8">
-                {/* Project Image Placeholder */}
-                <div className="bg-brand-cloud rounded-lg h-64 mb-6 flex items-center justify-center border border-brand-royal/20">
-                  <div className="text-center">
-                    <div className="text-brand-slate mb-2">Screenshot of</div>
-                    <div className="font-medium text-brand-ink">{project.domain}</div>
-                  </div>
-                </div>
-
-                {/* Project Info */}
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-brand-ink group-hover:text-brand-royal transition-colors">
-                    {project.title}
-                  </h3>
-                  <ExternalLink size={20} className="text-brand-royal flex-shrink-0 ml-3 mt-1" />
-                </div>
-
-                <p className="text-brand-slate mb-6 text-lg leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span 
-                      key={tagIndex}
-                      className="px-3 py-1 bg-brand-cloud text-brand-ink text-sm rounded-full border border-brand-royal/20"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Visit Link */}
-                <a 
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-brand-royal hover:text-brand-royal/80 font-medium text-lg transition-colors"
-                >
-                  <span>Visit {project.domain}</span>
-                  <ExternalLink size={18} />
-                </a>
-              </CardContent>
-            </Card>
+        {/* Responsive equal-size grid */}
+        <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-16">
+          {shots.map((src, i) => (
+            <button
+              key={src + i}
+              type="button"
+              onClick={() => setOpenSrc(src)}
+              className="group relative overflow-hidden rounded-2xl ring-1 ring-black/5 shadow hover:shadow-md transition-shadow"
+              style={{ aspectRatio: "16 / 10" }}
+              aria-label="Open screenshot"
+            >
+              <img
+                src={src}
+                alt="Website screenshot"
+                className="h-full w-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </button>
           ))}
-        </div>
+        </section>
+
+        {/* Full-screen modal preview */}
+        {openSrc && (
+          <div
+            className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4"
+            onClick={() => setOpenSrc(null)}
+            role="dialog"
+            aria-modal="true"
+          >
+            <div
+              className="relative max-w-6xl w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setOpenSrc(null)}
+                className="absolute -top-3 -right-3 z-10 rounded-full bg-white/90 px-3 py-1 text-sm shadow ring-1 ring-black/10"
+                aria-label="Close"
+              >
+                Close
+              </button>
+              <img
+                src={openSrc}
+                alt="Website screenshot preview"
+                className="w-full h-auto rounded-2xl shadow"
+              />
+              <div className="mt-2 text-right">
+                <a
+                  href={openSrc}
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-block text-sm text-white underline underline-offset-2"
+                >
+                  Open full image
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Coming Soon Notice */}
         <div className="bg-brand-cloud rounded-lg p-8 mb-12 text-center">

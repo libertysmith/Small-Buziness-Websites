@@ -18,7 +18,11 @@ export default function Services() {
         'Bilingual EN/KR content',
         'Contact form integration',
         'Google Maps embed',
-        'Basic setup'
+        'Basic setup',
+        t('services.feature.social'),
+        t('services.feature.browsers'),
+        t('services.feature.devices'),
+        t('services.feature.bilingualExpand')
       ]
     },
     {
@@ -32,7 +36,10 @@ export default function Services() {
         'Photo gallery (up to 20 photos)',
         'Contact forms & Google Maps',
         'Advanced social sharing',
-        'Basic analytics setup'
+        t('services.feature.social'),
+        t('services.feature.browsers'),
+        t('services.feature.devices'),
+        t('services.feature.bilingualExpand')
       ]
     },
     {
@@ -46,8 +53,12 @@ export default function Services() {
         'Photo gallery (up to 40 photos)',
         'Multiple contact forms',
         'Advanced performance optimization',
-        'Analytics & conversion tracking',
-        '30 days post-launch support'
+        '30 days post-launch support',
+        t('services.feature.social'),
+        t('services.feature.browsers'),
+        t('services.feature.devices'),
+        t('services.feature.bilingualExpand'),
+        t('services.tier3.crm')
       ]
     }
   ];
@@ -56,7 +67,7 @@ export default function Services() {
     { service: 'Logo refresh', price: '$150' },
     { service: 'Photo editing (20 photos)', price: '$120' },
     { service: 'Extra language support', price: '$150' },
-    { service: 'Monthly updates (2 hrs)', price: '$60' },
+    { service: t('services.addon.monthlyMonitoring'), price: '$60' },
   ];
 
   return (

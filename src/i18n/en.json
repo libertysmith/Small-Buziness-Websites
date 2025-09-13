@@ -61,5 +61,11 @@
   "promo2.aria": "Accessible design banner",
   "promo2.alt": "People easily using a website",
   "promo2.title": "Don't let complex designs turn newcomers away.",
-  "promo2.body": "Lumi Web Designs are easy to use for prospects, clients, staff, and instructors. Websites that allow customers to focus on what truly matters."
+  "promo2.body": "Lumi Web Designs are easy to use for prospects, clients, staff, and instructors. Websites that allow customers to focus on what truly matters.",
+  "services.feature.social": "Social media integration",
+  "services.feature.browsers": "Works on all major browsers",
+  "services.feature.devices": "Works on all devices",
+  "services.feature.bilingualExpand": "Bilingual content, ready to expand to more languages",
+  "services.addon.monthlyMonitoring": "Monthly Web Performance Monitoring",
+  "services.tier3.crm": "Set up and configure customer management system"
 }

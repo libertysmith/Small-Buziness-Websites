@@ -13,12 +13,12 @@ export default function Services() {
       name: t('services.starter'),
       price: '$999',
       features: [
-        'Single page website',
-        'Mobile-first responsive design', 
-        'Bilingual EN/KR content',
-        'Contact form integration',
-        'Google Maps embed',
-        'Basic setup',
+        t('services.items.singlePage'),
+        t('services.items.mobileFirst'), 
+        t('services.items.bilingualContent'),
+        t('services.items.contactForm'),
+        t('services.items.googleMaps'),
+        t('services.items.basicSetup'),
         t('services.feature.social'),
         t('services.feature.browsers'),
         t('services.feature.devices'),
@@ -29,13 +29,13 @@ export default function Services() {
       name: t('services.standard'),
       price: '$1,499', 
       features: [
-        'Up to 5 pages',
-        'Mobile-first responsive design',
-        'Bilingual EN/KR content',
-        'Menu/service showcase',
-        'Photo gallery (up to 20 photos)',
-        'Contact forms & Google Maps',
-        'Advanced social sharing',
+        t('services.items.upTo5Pages'),
+        t('services.items.mobileFirst'),
+        t('services.items.bilingualContent'),
+        t('services.items.menuShowcase'),
+        t('services.items.photoGallery20'),
+        t('services.items.contactFormsAndMaps'),
+        t('services.items.advancedSocialSharing'),
         t('services.feature.social'),
         t('services.feature.browsers'),
         t('services.feature.devices'),
@@ -46,14 +46,14 @@ export default function Services() {
       name: t('services.plus'),
       price: '$1,999',
       features: [
-        'Up to 8 pages',
-        'Mobile-first responsive design', 
-        'Bilingual EN/KR content',
-        'Advanced menu/catalog system',
-        'Photo gallery (up to 40 photos)',
-        'Multiple contact forms',
-        'Advanced performance optimization',
-        '30 days post-launch support',
+        t('services.items.upTo8Pages'),
+        t('services.items.mobileFirst'), 
+        t('services.items.bilingualContent'),
+        t('services.items.advancedMenuSystem'),
+        t('services.items.photoGallery40'),
+        t('services.items.multipleContactForms'),
+        t('services.items.performanceOptimization'),
+        t('services.items.postLaunchSupport'),
         t('services.feature.social'),
         t('services.feature.browsers'),
         t('services.feature.devices'),
@@ -64,9 +64,9 @@ export default function Services() {
   ];
 
   const addons = [
-    { service: 'Logo refresh', price: '$150' },
-    { service: 'Photo editing (20 photos)', price: '$120' },
-    { service: 'Extra language support', price: '$150' },
+    { service: t('services.addons.logoRefresh'), price: '$150' },
+    { service: t('services.addons.photoEditing'), price: '$120' },
+    { service: t('services.addons.extraLanguage'), price: '$150' },
     { service: t('services.addon.monthlyMonitoring'), price: '$60' },
   ];
 
@@ -88,7 +88,7 @@ export default function Services() {
             <Card key={index} className={`relative ${index === 1 ? 'border-brand-royal shadow-lg' : ''}`}>
               {index === 1 && (
                 <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-royal text-white">
-                  Most Popular
+                  {t('services.ui.mostPopular')}
                 </Badge>
               )}
               <CardHeader className="text-center">
@@ -116,7 +116,7 @@ export default function Services() {
                       : 'bg-brand-charcoal hover:bg-brand-charcoal/90'
                   } text-white`}
                 >
-                  <Link to="/contact">Get Started</Link>
+                  <Link to="/contact">{t('services.ui.getStarted')}</Link>
                 </Button>
               </CardContent>
             </Card>

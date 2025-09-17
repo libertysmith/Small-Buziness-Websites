@@ -23,7 +23,7 @@ export default function Portfolio() {
       blurb: t('portfolio.item2.blurb'),
       url: 'https://www.tempo-pilates.com/',
       displayUrl: 'tempo-pilates.com',
-      image: 'Screenshot Hampyong 2025-09-13.jpg' // same file for now as provided
+      image: 'Screenshot Tempo 2025-09-13.jpg'
     }
   ];
 

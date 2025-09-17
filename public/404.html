@@ -1,24 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lumi Web - Bilingual Web Design (DFW)</title>
-    <meta name="description" content="Affordable EN/KR websites for restaurants, cafés, and shops. Mobile-first, flat pricing, fast turnaround." />
-    <meta name="author" content="Small Buziness Websites" />
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta charset="utf-8">
+    <title>Lumi Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://libertysmith.github.io/lumi-web/">
 
-    <!-- Open Graph (link preview) -->
+    <!-- Open Graph (same as index) -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Lumi Web">
     <meta property="og:title" content="Lumi Web: Custom bilingual websites for DFW small businesses">
@@ -28,7 +18,6 @@
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="1024">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:alt" content="Lumi Web logo">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card -->
@@ -36,10 +25,21 @@
     <meta name="twitter:title" content="Lumi Web: Custom bilingual websites for DFW small businesses">
     <meta name="twitter:description" content="Design that appeals to both English and Korean speakers. Clear, fast, and easy on all devices.">
     <meta name="twitter:image" content="https://libertysmith.github.io/lumi-web/brand/lumi-logo-1024.jpg">
-  </head>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Minimal SPA redirect so actual browsing still works -->
+    <script>
+      (function() {
+        var path = location.pathname.replace(/^\/lumi-web\//, "/lumi-web/");
+        // Preserve path & query for the SPA router
+        var target = "/lumi-web/" + (location.search || "") + (location.hash || "");
+        // Hard redirect only when a user is actually navigating.
+        // Scrapers will still read the meta above.
+        if (document.referrer && document.visibilityState === "visible") {
+          location.replace(target);
+        }
+      })();
+    </script>
+    <style>body{margin:0;background:#fff}</style>
+  </head>
+  <body></body>
 </html>

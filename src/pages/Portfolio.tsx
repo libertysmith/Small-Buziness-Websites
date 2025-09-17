@@ -1,25 +1,31 @@
 import React from 'react';
 import { useI18n } from '@/i18n/useI18n';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Portfolio() {
   const { t } = useI18n();
   const base = import.meta.env.BASE_URL || "/";
 
-  // Encode each filename (handles spaces)
-  const shots = [
-    "Screenshot Hampyong 2025-09-13.jpg",
-    "Screenshot Tempo 2025-09-13.jpg"
-  ].map(name => `${base}${encodeURI(name)}`);
-
-  const [openSrc, setOpenSrc] = React.useState<string | null>(null);
-
-  React.useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpenSrc(null); };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  // Portfolio projects with screenshots
+  const projects = [
+    {
+      title: t('portfolio.item1.title'),
+      blurb: t('portfolio.item1.blurb'),
+      url: 'https://hampyongnoodle.twupro.com/',
+      displayUrl: 'hampyongnoodle.twupro.com',
+      image: 'Screenshot Hampyong 2025-09-13.jpg'
+    },
+    {
+      title: t('portfolio.item2.title'),
+      blurb: t('portfolio.item2.blurb'),
+      url: 'https://www.tempo-pilates.com/',
+      displayUrl: 'tempo-pilates.com',
+      image: 'Screenshot Hampyong 2025-09-13.jpg' // same file for now as provided
+    }
+  ];
 
   return (
     <div className="min-h-screen py-20">
@@ -33,67 +39,50 @@ export default function Portfolio() {
           </p>
         </div>
 
-        {/* Responsive equal-size grid */}
-        <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-16">
-          {shots.map((src, i) => (
-            <button
-              key={src + i}
-              type="button"
-              onClick={() => setOpenSrc(src)}
-              className="group relative overflow-hidden rounded-2xl ring-1 ring-black/5 shadow hover:shadow-md transition-shadow"
-              style={{ aspectRatio: "16 / 10" }}
-              aria-label="Open screenshot"
-            >
-              <img
-                src={src}
-                alt="Website screenshot"
-                className="h-full w-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-            </button>
-          ))}
-        </section>
-
-        {/* Full-screen modal preview */}
-        {openSrc && (
-          <div
-            className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4"
-            onClick={() => setOpenSrc(null)}
-            role="dialog"
-            aria-modal="true"
-          >
-            <div
-              className="relative max-w-6xl w-full"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                type="button"
-                onClick={() => setOpenSrc(null)}
-                className="absolute -top-3 -right-3 z-10 rounded-full bg-white/90 px-3 py-1 text-sm shadow ring-1 ring-black/10"
-                aria-label="Close"
-              >
-                Close
-              </button>
-              <img
-                src={openSrc}
-                alt="Website screenshot preview"
-                className="w-full h-auto rounded-2xl shadow"
-              />
-              <div className="mt-2 text-right">
-                <a
-                  href={openSrc}
-                  target="_blank"
-                  rel="noopener"
-                  className="inline-block text-sm text-white underline underline-offset-2"
+        {/* Portfolio Cards */}
+        <section className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+          {projects.map((project, i) => (
+            <Card key={i} className="group hover:shadow-lg transition-shadow overflow-hidden">
+              {/* Screenshot */}
+              <div className="aspect-video overflow-hidden">
+                <a 
+                  href={project.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block h-full"
                 >
-                  Open full image
+                  <img
+                    src={`${base}${encodeURI(project.image)}`}
+                    alt={project.title}
+                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </a>
               </div>
-            </div>
-          </div>
-        )}
+              
+              <CardContent className="p-6">
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-xl font-semibold text-brand-ink">
+                    {project.title}
+                  </h3>
+                  <ExternalLink size={18} className="text-brand-royal flex-shrink-0 ml-2" />
+                </div>
+                <p className="text-brand-slate mb-4">
+                  {project.blurb}
+                </p>
+                <a 
+                  href={project.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-brand-royal hover:text-brand-royal/80 font-medium"
+                >
+                  {project.displayUrl}
+                </a>
+              </CardContent>
+            </Card>
+          ))}
+        </section>
 
         {/* Coming Soon Notice */}
         <div className="bg-brand-cloud rounded-lg p-8 mb-12 text-center">
